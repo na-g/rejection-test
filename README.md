@@ -1,7 +1,8 @@
 ## Rejection Point
 This script tests a patch set to see if it will apply cleanly. It is suitable for use
 with `git bisect run`, which in turn allows one to know when a patch no longer applies
-cleanly.
+cleanly. This helps solve the problem of identifying when a fix on a fork will need
+manual reapplication when updating the fork from upstream.
 
 ### Usage
 Warning: this will discard any uncommited changes, so stash or commit your local changes before you attempt a bisection.
