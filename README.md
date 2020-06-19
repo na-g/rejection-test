@@ -10,7 +10,7 @@ Assuming that `rejection-point.py` is in your path, and you have a clean checkou
 1. Find a patch that you need to see exactly when in the tree it no longer applied cleanly.
 2. Start a bisect on the target git repo with `git bisect start`.
 3. Set the "good" revision to the last revision you are sure the patch applied with `git bisect good some_rev`.
-4. Set the "bad" revision to descendant revision of "good" in which the patch doesn't apply with `git bisect bad some_rev`.
+4. Set the "bad" revision to a descendant revision of "good" in which the patch doesn't apply with `git bisect bad some_rev`.
 5. Run `git bisect run rejection-point.py -pX your.patch` where `X` is the number of path segments to strip from the patch.
-6. Bisect will then bisect through report first version where the patch no longer applied.
+6. Bisect will then bisect through the revisions between "good" and "bad", and it will report the first version where the patch no longer applied.
 7. Profit
